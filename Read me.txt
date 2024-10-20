@@ -1,0 +1,107 @@
+# Project Title
+
+## Project Overview
+Provide a brief description of your project here.
+
+## Prerequisites
+- [Node.js](https://nodejs.org/) (v14.x or higher recommended)
+- [npm](https://www.npmjs.com/) (comes with Node.js)
+- [MySQL](https://www.mysql.com/) database
+
+## Installation
+
+1. **Clone the repository**
+    ```sh
+    git clone https://github.com/your-username/your-project.git
+    cd your-project
+    ```
+
+2. **Install dependencies**
+    ```sh
+    npm install
+    ```
+
+3. **Set up the database**
+
+    - Ensure MySQL is installed and running on your system.
+    - Create a database for the project:
+      ```sql
+      CREATE DATABASE your_database_name;
+      ```
+    - Create a `.env` file in the root directory of your project with the following content:
+
+    ```env
+    DB_HOST=localhost
+    DB_USER=your_mysql_username
+    DB_PASSWORD=your_mysql_password
+    DB_NAME=your_database_name
+    PORT=3000
+    JWT_SECRET=your_jwt_secret
+    ```
+
+4. **Run database migrations** (if applicable)
+    ```sh
+    npm run migrate
+    ```
+
+## Running the Project
+
+1. **Start the server**
+    ```sh
+    npm start
+    ```
+
+2. **Visit the application**
+    Open your browser and go to `http://localhost:3000`.
+
+## Available Scripts
+
+- `npm start` - Start the server
+- `npm run migrate` - Run database migrations (if applicable)
+- `npm test` - Run tests (if applicable)
+
+## API Endpoints
+
+### Authentication
+- **POST** `/register` - Register a new user
+- **POST** `/login` - Log in as a user
+
+### Admin
+- **POST** `/add-admin` - Add a new admin
+
+### Professor
+- **POST** `/professor-register` - Register a new professor
+
+### Projects
+- **GET** `/projects` - List all projects
+- **POST** `/projects` - Add a new project
+- **PUT** `/projects/:project_id` - Edit a project
+- **DELETE** `/projects/:project_id` - Delete a project
+
+### Notifications
+- **GET** `/notifications/:recipient_id` - Get unread notifications for a recipient
+- **PUT** `/notifications/:notification_id` - Update notification status
+
+### Grades
+- **GET** `/grades/:student_id` - Get grades for a student
+- **PUT** `/grades/:student_id` - Update grades for a student
+- **GET** `/average-grades/:project_id` - Get average grades for a project
+
+### Statistics
+- **GET** `/accepted-project-count` - Get the count of accepted projects
+- **GET** `/most-bookmarked-projects` - Get the most bookmarked projects
+- **GET** `/average-grades-by-department` - Get average grades by department
+- **GET** `/average-grades-by-graduation-term` - Get average grades by graduation term
+- **GET** `/average-grades-by-graduation-year` - Get average grades by graduation year
+
+## Troubleshooting
+If you encounter any issues, check the following:
+- Ensure your MySQL server is running.
+- Verify your `.env` configuration.
+- Check the console for error messages.
+
+## Contributing
+If you'd like to contribute to this project, please fork the repository and use a feature branch. Pull requests are welcome.
+
+## License
+This project is licensed under the MIT License - see the LICENSE.md file for details.
